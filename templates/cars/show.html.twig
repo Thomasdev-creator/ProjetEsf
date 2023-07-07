@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars{% endblock %}
+
+{% block body %}
+    <h1>Cars</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ car.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ car.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ car.content }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ car.price }}</td>
+            </tr>
+            <tr>
+                <th>Kilometer</th>
+                <td>{{ car.kilometer }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ car.year }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <a href="{{ path('app_comment_new', {'id': car.id}) }}">Ajouter un nouveau commentaire</a>
+    </div>
+
+    <div>
+        {% for comment in comment %}
+            <div>{{ comment.user.email }} a dit :</div>
+            <div>{{ comment.content }}</div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
