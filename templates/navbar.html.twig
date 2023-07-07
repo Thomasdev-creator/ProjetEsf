@@ -15,6 +15,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ path('app_cars_show') }}">Véhicules</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ path('app_services_index') }}">Services</a></li>
             <li><hr class="dropdown-divider"></li>
         </ul>
@@ -29,11 +30,11 @@
             <li><a class="dropdown-item" href="{{ path('app_admin_category_index') }}">Catégories</a></li>
             <li><a class="dropdown-item" href="{{ path('app_admin_cars_index') }}">Véhicules</a></li>
             <li><a class="dropdown-item" href="{{ path('app_admin_services_index') }}">Services</a></li>
-            <li><a class="dropdown-item" href="#">Horaires d'ouvertures</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_opening_hours_index') }}">Horaires d'ouvertures</a></li>
             <li><a class="dropdown-item" href="#">Créer nouveau compte</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Commentaires</a></li>
-            <li><a class="dropdown-item" href="#">Avis clients</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_comment_index') }}">Commentaires</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_reviews_index') }}">Avis clients</a></li>
         </ul>
         </li>
 
@@ -43,11 +44,10 @@
             Espace employé
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Catégories</a></li>
-            <li><a class="dropdown-item" href="#">Véhicules</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_employe_cars_index') }}">Véhicules</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Commentaires</a></li>
-            <li><a class="dropdown-item" href="#">Avis clients</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_employee_comment_index') }}">Commentaires</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_employe_reviews_index') }}">Avis clients</a></li>
         </ul>
         </li>
           <li class="nav-item">
