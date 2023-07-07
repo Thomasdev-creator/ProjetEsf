@@ -35,10 +35,6 @@
     </table>
 
     <div>
-        <a href="{{ path('app_comment_new', {'id': car.id}) }}">Ajouter un nouveau commentaire</a>
-    </div>
-
-    <div>
         {% for comment in comment %}
             <div>{{ comment.user.email }} a dit :</div>
             <div>{{ comment.content }}</div>

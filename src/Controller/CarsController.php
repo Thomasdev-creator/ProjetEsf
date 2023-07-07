@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/cars')]
 class CarsController extends AbstractController
 {
-     #[Route('/{id}', name: 'app_cars_show', methods: ['GET'])]
+     #[Route('/véhicules', name: 'app_cars_show', methods: ['GET'])]
     public function show(Cars $car): Response
     {
         $comments = $car->getComments();
