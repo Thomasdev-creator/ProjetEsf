@@ -3,34 +3,32 @@
 {% block title %}Cars{% endblock %}
 
 {% block body %}
-    <h1>Cars</h1>
+    <h1>Véhicules d'occasions</h1>
 
     <table class="table">
         <tbody>
+        <div>
             <tr>
-                <th>Id</th>
-                <td>{{ car.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
+                <th>Modèle</th>
                 <td>{{ car.title }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Description</th>
                 <td>{{ car.content }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix</th>
                 <td>{{ car.price }}</td>
             </tr>
             <tr>
-                <th>Kilometer</th>
+                <th>Kilomètre</th>
                 <td>{{ car.kilometer }}</td>
             </tr>
             <tr>
-                <th>Year</th>
+                <th>Année</th>
                 <td>{{ car.year }}</td>
             </tr>
+        </div>
         </tbody>
     </table>
 

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Cars;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 
 /**
  * @extends ServiceEntityRepository<Cars>
@@ -71,7 +72,7 @@ class CarsRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.content LIKE :val')
-            ->setParameter('val', "%$text%")
+            ->setParameter('val', "$text%")
             ->getQuery()
             ->getResult()
         ;

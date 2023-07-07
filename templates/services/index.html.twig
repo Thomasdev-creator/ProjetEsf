@@ -3,17 +3,19 @@
 {% block title %}Services index{% endblock %}
 
 {% block body %}
-    <h1>Services index</h1>
+    <h1>Services</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>actions</th>
-            </tr>
-        </thead>
+    <div>
+        <h2>Réparation</h2>
+        <p>Deserunt consequat anim officia deserunt.</p>
+    </div>
+
+    <div>
+        <h2>Maintenance</h2>
+        <p>Aute anim occaecat aliquip et sint consequat veniam labore id in sint.</p>
+    </div>
+    
+    </tbody>
         <tbody>
         {% for service in services %}
             <tr>

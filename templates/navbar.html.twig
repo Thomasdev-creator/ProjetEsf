@@ -31,14 +31,13 @@
             <li><a class="dropdown-item" href="{{ path('app_admin_cars_index') }}">Véhicules</a></li>
             <li><a class="dropdown-item" href="{{ path('app_admin_services_index') }}">Services</a></li>
             <li><a class="dropdown-item" href="{{ path('app_admin_opening_hours_index') }}">Horaires d'ouvertures</a></li>
-            <li><a class="dropdown-item" href="#">Créer nouveau compte</a></li>
             <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('app_admin_user_index') }}">Créer nouveau compte</a></li>
             <li><a class="dropdown-item" href="{{ path('app_admin_comment_index') }}">Commentaires</a></li>
             <li><a class="dropdown-item" href="{{ path('app_admin_reviews_index') }}">Avis clients</a></li>
         </ul>
         </li>
 
-        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Espace employé
@@ -57,8 +56,8 @@
           <a class="nav-link active" aria-current="page" href="{{ path('app_login') }}">Identification</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+      <form class="d-flex" role="search" action="{{ path('app_lookup') }}" method="GET">
+        <input class="form-control me-2" name="search" type="search" placeholder="" aria-label="search">
         <button class="btn btn-outline-success" type="submit">Rechercher</button>
       </form>
     </div>

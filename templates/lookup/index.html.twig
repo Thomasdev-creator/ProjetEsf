@@ -3,29 +3,21 @@
 {% block title %}Hello LookupController!{% endblock %}
 
 {% block body %}
-<div>
-    <form>
-        <input type="search" name="search" placeholder"Recherche..."/>
-        <button type="submit">Rechercher</button>
-    </form>
-</div>
-<table>
+<h1>Résultats de la recherche</h1>
+<h2 class="my-4">Voitures d'occasions</h2>
     {% for car in cars %}
+        <div>
+            <h3><td>{{ car.title }}</td></h3>
         <tr>
-            <td>{{ car.id }}</td>
-            <td>{{ car.title }}</td>
-            <td>{{ car.content }}</td>
-            <td>{{ car.price }}</td>
-            <td>{{ car.kilometer }}</td>
-            <td>{{ car.year }}</td>
             <td>
-                <a href="{{ path('app_cars_show', {'id': car.id}) }}">show</a>
+                <a href="{{ path('app_cars_show', {'id': car.id}) }}">Voir le véhicule</a>
             </td>
         </tr>
     {% else %}
-        <tr>
-            <td colspan="7">no records found</td>
-        </tr>
+        <div>
+            Aucune voiture pour vos critères de recherche.
+        </div>
+
     {% endfor %}
-</table>
+
 {% endblock %}
