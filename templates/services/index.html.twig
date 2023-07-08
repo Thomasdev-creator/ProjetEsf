@@ -15,7 +15,7 @@
         <p>Aute anim occaecat aliquip et sint consequat veniam labore id in sint.</p>
     </div>
     
-    </tbody>
+    <table>
         <tbody>
         {% for service in services %}
             <tr>
@@ -24,7 +24,6 @@
                 <td>{{ service.content }}</td>
                 <td>
                     <a href="{{ path('app_services_show', {'id': service.id}) }}">show</a>
-                    <a href="{{ path('app_services_edit', {'id': service.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

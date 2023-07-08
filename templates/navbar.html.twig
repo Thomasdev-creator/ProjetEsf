@@ -1,6 +1,6 @@
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Garage V.Parrot</a>
+    <a class="navbar-brand" href="{{ path('app_home')}}">Garage V.Parrot</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,10 +21,13 @@
         </ul>
         </li>
 
-      
+        {% if is_granted('ROLE_ADMIN') %}
         <li class="nav-item dropdown">
+
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Espace admin
+         
+
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ path('app_admin_category_index') }}">Catégories</a></li>
@@ -37,7 +40,9 @@
             <li><a class="dropdown-item" href="{{ path('app_admin_reviews_index') }}">Avis clients</a></li>
         </ul>
         </li>
+        {% endif %}
 
+        {% if is_granted('ROLE_EMPLOYE') %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Espace employé
@@ -49,6 +54,11 @@
             <li><a class="dropdown-item" href="{{ path('app_employe_reviews_index') }}">Avis clients</a></li>
         </ul>
         </li>
+        {% endif %}
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ path('app_opening_hours_index') }}">Horaires</a>
+        </li>
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ path('app_register') }}">Inscription</a>
         </li>
@@ -58,7 +68,7 @@
       </ul>
       <form class="d-flex" role="search" action="{{ path('app_lookup') }}" method="GET">
         <input class="form-control me-2" name="search" type="search" placeholder="" aria-label="search">
-        <button class="btn btn-outline-success" type="submit">Rechercher</button>
+        <button class="btn btn-outline-dark" type="submit">Rechercher</button>
       </form>
     </div>
   </div>

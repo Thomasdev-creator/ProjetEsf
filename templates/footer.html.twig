@@ -9,7 +9,7 @@
 }
 
 body {
-    background: #f1f1f1;
+    background: #f2f2f2;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     display: flex;
@@ -28,7 +28,7 @@ footer {
     flex-shrink: 0;
     border-top: 1px dashed #000;
     width: 100%;
-    background: #f1f1f1;
+    background: #262526;
     color: #333;
 }
 .contenu-footer {
@@ -38,7 +38,7 @@ footer {
     justify-content: center;
     align-items: flex-start;
     font-size: 20px;
-    padding: 50px 0 100px;
+    padding: 50px 0 0px;
 }
 
 .bloc {
@@ -46,11 +46,35 @@ footer {
     margin: 0 30px;
 }
 
+.title-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    margin-right: 10px;
+    margin-left: 30px;
+    font-family: rajdhani;
+  }
+  
+  .title-button {
+    background-color: red;
+    color: #262526;
+    border: none;
+    padding: 15px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 30px;
+    font-family: rajdhani;
+  }
+
 .footer-contact h3,
 .footer-services h3,
 .footer-horaires h3 {
     font-size: 25px;
     padding-bottom: 20px;
+    color: #f2f2f2;
 }
 
 .footer-contact p {
@@ -61,6 +85,8 @@ footer {
 .liste-horaires,
 .liste-contact {
     list-style-type: none;
+    color: #f2f2f2;
+    font-family: barlow;
 }
 .liste-services li {
     padding: 2px 0;
@@ -68,11 +94,11 @@ footer {
 
 .liste-services a {
     text-decoration: none;
-    color: #333;
+    color: #f2f2f2;
 }
 
 .liste-services a:hover {
-    color: rgb(3, 3, 3);
+    color: #f2f2f2;
 }
 
 /* Media queries */
@@ -129,10 +155,22 @@ footer {
         </div>
 
         <div class="bloc footer-contact">
+            <div>
             <h3>Contact</h3>
-              <p>Téléphone: 0700000000</p>
-              <p>Email: projetexemple.com</p>
-              <p>Adress: 6 rue exemple, 75000 Paris</p>
+            <button type="button" class="title-button" id="contact-button">Contactez-nous !</button>
+
+            <script>
+            document.getElementById('contact-button').addEventListener('click', function() {
+            window.location.href = "{{ path('app_contact') }}";
+            });
+            </script>
+
+        </div>
+            <ul class="liste-contact">
+              <li>Téléphone: 0700000000</li>
+              <li>Email: projetexemple.com</li>
+              <li>Adress: 6 rue exemple, 75000 Paris</li>
+            </ul> 
         </div>
 
         <div class="bloc footer-horaires">

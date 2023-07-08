@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends 'base.html.twig' %}
 
 {% block title %}Services{% endblock %}
@@ -7,32 +8,28 @@
 
     <table class="table">
         <tbody>
-        <div>
-            <tr>
-                <th>Réparation</th>
-                <td>{{ service.title }}</td>
-            </tr>
-            <tr>
-                <th>Services</th>
-                <td>{{ service.content }}</td>
-            </tr>
-        </div>
-            <div>
-            <tr>
-                <th>Maintenance</th>
-                <td>{{ service.title }}</td>
-            </tr>
-            <tr>
-                <th>Services</th>
-                <td>{{ service.content }}</td>
-            </tr>
-        </div>
+          <tr>
+            <td>
+              <h4>Réparation</h4>
+              <p>{{ service.title }}</p>
+            </td>
+            <td style="display: inline-block; text-align: center;">
+              <h4>Services</h4>
+              <p>{{ service.content }}</p>
+            </td>
+            <td style="display: inline-block; text-align: center;">
+              <h4>Maintenance</h4>
+              <p>{{ service.title }}</p>
+            </td>
+            <td style="display: inline-block; text-align: center;">
+              <h4>Services</h4>
+              <p>{{ service.content }}</p>
+            </td>
+          </tr>
         </tbody>
-    </table>
+      </table>
+      
 
     <a href="{{ path('app_services_index') }}">back to list</a>
 
-    <a href="{{ path('app_services_edit', {'id': service.id}) }}">edit</a>
-
-    {{ include('services/_delete_form.html.twig') }}
 {% endblock %}
