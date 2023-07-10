@@ -3,15 +3,14 @@
 {% block title %}Reviews index{% endblock %}
 
 {% block body %}
-    <h1>Reviews index</h1>
+    <h1>Avis clients</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Content</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
+                <th>Contenu</th>
+                <th>Date de création</th>
             </tr>
         </thead>
         <tbody>
@@ -21,17 +20,15 @@
                 <td>{{ review.content }}</td>
                 <td>{{ review.createdAt ? review.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_admin_reviews_show', {'id': review.id}) }}">show</a>
-                    <a href="{{ path('app_admin_reviews_edit', {'id': review.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_reviews_show', {'id': review.id}) }}">Consulter</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun élément trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_reviews_new') }}">Create new</a>
 {% endblock %}

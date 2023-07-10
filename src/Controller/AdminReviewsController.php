@@ -22,49 +22,11 @@ class AdminReviewsController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_reviews_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ReviewsRepository $reviewsRepository): Response
-    {
-        $review = new Reviews();
-        $review->setCreatedAt(new DateTimeImmutable());
-        $form = $this->createForm(ReviewsType::class, $review);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $reviewsRepository->save($review, true);
-
-            return $this->redirectToRoute('app_admin_reviews_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin_reviews/new.html.twig', [
-            'review' => $review,
-            'form' => $form,
-        ]);
-    }
-
     #[Route('/{id}', name: 'app_admin_reviews_show', methods: ['GET'])]
     public function show(Reviews $review): Response
     {
         return $this->render('admin_reviews/show.html.twig', [
             'review' => $review,
-        ]);
-    }
-
-    #[Route('/{id}/edit', name: 'app_admin_reviews_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Reviews $review, ReviewsRepository $reviewsRepository): Response
-    {
-        $form = $this->createForm(ReviewsType::class, $review);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $reviewsRepository->save($review, true);
-
-            return $this->redirectToRoute('app_admin_reviews_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('admin_reviews/edit.html.twig', [
-            'review' => $review,
-            'form' => $form,
         ]);
     }
 

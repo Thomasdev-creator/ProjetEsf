@@ -3,7 +3,7 @@
 {% block title %}Category{% endblock %}
 
 {% block body %}
-    <h1>Category</h1>
+    <h1>Categorie</h1>
 
     <table class="table">
         <tbody>
@@ -12,13 +12,15 @@
                 <td>{{ category.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom
+                </th>
                 <td>{{ category.name }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_category_index') }}">back to list</a>
+    <a href="{{ path('app_category_index') }}">Retour
+    </a>
 
     <div>
 
@@ -26,12 +28,11 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Price</th>
-                <th>Kilometer</th>
-                <th>Year</th>
-                <th>actions</th>
+                <th>Modèle</th>
+                <th>Contenu</th>
+                <th>Prix</th>
+                <th>Kilomètre</th>
+                <th>Année</th>
             </tr>
         </thead>
         <tbody>
@@ -44,12 +45,12 @@
                 <td>{{ car.kilometer }}</td>
                 <td>{{ car.year }}</td>
                 <td>
-                    <a href="{{ path('app_cars_show', {'id': car.id}) }}">show</a>
+                    <a href="{{ path('app_cars_show', {'id': car.id}) }}">Consulter</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucun véhicule trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

@@ -23,12 +23,12 @@
                 <td>{{ service.title }}</td>
                 <td>{{ service.content }}</td>
                 <td>
-                    <a href="{{ path('app_services_show', {'id': service.id}) }}">show</a>
+                    <a href="{{ path('app_services_show', {'id': service.id}) }}">Consulter</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun service trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

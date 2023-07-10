@@ -3,15 +3,13 @@
 {% block title %}Services index{% endblock %}
 
 {% block body %}
-    <h1>Services index</h1>
+    <h1>Services</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>actions</th>
+                <th>Service</th>
+                <th>Contenu</th>
             </tr>
         </thead>
         <tbody>
@@ -21,17 +19,17 @@
                 <td>{{ service.title }}</td>
                 <td>{{ service.content }}</td>
                 <td>
-                    <a href="{{ path('app_admin_services_show', {'id': service.id}) }}">show</a>
-                    <a href="{{ path('app_admin_services_edit', {'id': service.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_services_show', {'id': service.id}) }}">Consulter</a>
+                    <a href="{{ path('app_admin_services_edit', {'id': service.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun élément trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_services_new') }}">Create new</a>
+    <a href="{{ path('app_admin_services_new') }}">Créer</a>
 {% endblock %}

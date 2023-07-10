@@ -3,14 +3,14 @@
 {% block title %}Comment index{% endblock %}
 
 {% block body %}
-    <h1>Comment index</h1>
+    <h1>Commentaire</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Content</th>
-                <th>CreatedAt</th>
+                <th>Contenu</th>
+                <th>Date de création</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,17 +21,17 @@
                 <td>{{ comment.content }}</td>
                 <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">show</a>
-                    <a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_comment_show', {'id': comment.id}) }}">Consulter</a>
+                    <a href="{{ path('app_admin_comment_edit', {'id': comment.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucun commentaire trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_comment_new') }}">Create new</a>
+    <a href="{{ path('app_admin_comment_new') }}">Créer</a>
 {% endblock %}

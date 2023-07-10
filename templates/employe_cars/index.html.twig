@@ -3,17 +3,17 @@
 {% block title %}Cars index{% endblock %}
 
 {% block body %}
-    <h1>Cars index</h1>
+    <h1>Véhicules</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Price</th>
-                <th>Kilometer</th>
-                <th>Year</th>
+                <th>Modèle</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Kilomètre</th>
+                <th>Année</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -27,17 +27,17 @@
                 <td>{{ car.kilometer }}</td>
                 <td>{{ car.year }}</td>
                 <td>
-                    <a href="{{ path('app_employe_cars_show', {'id': car.id}) }}">show</a>
-                    <a href="{{ path('app_employe_cars_edit', {'id': car.id}) }}">edit</a>
+                    <a href="{{ path('app_employe_cars_show', {'id': car.id}) }}">Consulter</a>
+                    <a href="{{ path('app_employe_cars_edit', {'id': car.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucun véhicules trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_employe_cars_new') }}">Create new</a>
+    <a href="{{ path('app_employe_cars_new') }}">Créer</a>
 {% endblock %}
