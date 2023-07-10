@@ -12,9 +12,25 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/cars/{id}/comment')]
+#[Route('/cars/comment')]
 class CommentController extends AbstractController
 {
+    #[Route('/', name: 'app_comment_index', methods: ['GET'])]
+    public function index(CommentRepository $commentRepository): Response
+    {
+        return $this->render('comment/index.html.twig', [
+            'comment' => $commentRepository->findAll(),
+        ]);
+    }
+
+
+    #[Route('/show', name: 'app_comment_show', methods: ['GET'])]
+    public function show(Comment $comment): Response
+    {
+        return $this->render('comment/show.html.twig', [
+            'comment' => $comment,
+        ]);
+    }
 
     #[Route('/new', name: 'app_comment_new', methods: ['GET', 'POST'])]
     public function new(Request $request, Cars $car, CommentRepository $commentRepository): Response
