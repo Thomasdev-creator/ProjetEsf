@@ -11,17 +11,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\CarFilterType;
 
-
 #[Route('/cars')]
 class CarsController extends AbstractController
+
 {
-     #[Route('/véhicules', name: 'app_cars_show', methods: ['GET'])]
+    #[Route('/véhicules', name: 'app_cars_show', methods: ['GET'])]
     public function show(Cars $car): Response
     {
         $comments = $car->getComments();
         return $this->render('cars/show.html.twig', [
             'car' => $car,
-            'comment' => $comments
+            'comments' => $comments
         ]);
     }
 }

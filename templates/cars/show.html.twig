@@ -36,10 +36,12 @@
     </table>
 
     <div>
-        {% for comment in comment %}
+        {% for comment in comments %}
             <div>{{ comment.user.email }} a dit :</div>
             <div>{{ comment.content }}</div>
         {% endfor %}
     </div>
+
+    
 
 {% endblock %}
