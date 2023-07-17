@@ -1,0 +1,29 @@
+{
+  "name": "ecfprojet",
+  "version": "1.0.0",
+  "description": "fichier package.json",
+  "main": "public/index.php",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "php bin/phpunit"
+  },
+  "engines": {
+    "node": "v18.15.*",
+    "npm": "9.5.*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomasdev-creator/ProjetEsf.git"
+  },
+  "keywords": [
+    "symfony"
+  ],
+  "author": "thomas fournier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomasdev-creator/ProjetEsf/issues"
+  },
+  "homepage": "https://github.com/Thomasdev-creator/ProjetEsf#readme"
+}
