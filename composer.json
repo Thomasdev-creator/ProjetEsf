@@ -47,9 +47,13 @@
         "allow-plugins": {
             "php-http/discovery": true,
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "sort-packages": true
         },
-        "sort-packages": true
+        "platform": {
+            "php": ">=8.1",
+            "memory_limit": "512M"
+        }
     },
     "autoload": {
         "psr-4": {
