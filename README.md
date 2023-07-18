@@ -48,6 +48,10 @@ Configuartion de twig : "files.associations": {
 
 8. Lancer l'application en utilisant la commande symfony serve.
 
+## Créer un administrateur pour le back-office de l'application web : 
+
+- Rendez-vous dans php my admin puis dans user, puis séléctionnez user, puis définissez l'utilisateur comme admin grâce à [ROLE_ADMIN]
+
 ## Fonctionnalités
 
 - Fonctionnalité : Autentification
