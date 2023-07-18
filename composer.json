@@ -4,7 +4,8 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": "8.1.*",
+        "php": ">=8.2.8",
+        "symfony/apache-pack": "^1.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^2.10",
@@ -49,10 +50,6 @@
             "symfony/flex": true,
             "symfony/runtime": true,
             "sort-packages": true
-        },
-        "platform": {
-            "php": ">=8.1",
-            "memory_limit": "512M"
         }
     },
     "autoload": {
