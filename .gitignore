@@ -20,3 +20,5 @@
 ###< symfony/phpunit-bridge ###
 
 .env
+.env.test
+.env.example
